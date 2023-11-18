@@ -1,14 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Zombie _prefab;
-    [SerializeField] private SpawnPoint _spawnPoint;
+    [SerializeField] private SpawnPoint[] _points;
 
     private float _delay = 2f;
+    private Vector3 _direction = Vector3.forward;
     private WaitForSeconds _spawnDelay;
     private Coroutine _spawnCoroutine;
 
@@ -28,9 +27,11 @@ public class Spawner : MonoBehaviour
 
         while (isWorking)
         {
-            Zombie spawnedZombie = Instantiate(_prefab, _spawnPoint.transform.position, Quaternion.identity);
+            SpawnPoint spawnPoint = GetRandomPoint();
 
-            spawnedZombie.transform.forward = _spawnPoint.MoveDirection;
+            Zombie spawnedZombie = Instantiate(_prefab, spawnPoint.transform.position, Quaternion.identity);
+
+            spawnedZombie.SetDirection(_direction);
 
             yield return _spawnDelay;
         }
@@ -40,4 +41,6 @@ public class Spawner : MonoBehaviour
     {
         _spawnDelay = new WaitForSeconds(_delay);
     }
+
+    private SpawnPoint GetRandomPoint() => _points[Random.Range(0, _points.Length)];
 }

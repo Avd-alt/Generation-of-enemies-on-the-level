@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 714681302}
   - component: {fileID: 714681301}
   - component: {fileID: 714681300}
+  - component: {fileID: 714681304}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -317,6 +318,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &714681304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714681299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac17b158edb95b44b12da99b0e207aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: -4518163407334209957, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  _points:
+  - {fileID: 1698227811}
+  - {fileID: 1496540113}
+  _setDirection: {x: 0, y: 0, z: 5}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +428,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1496540112}
-  - component: {fileID: 1496540114}
   - component: {fileID: 1496540113}
   m_Layer: 0
   m_Name: SpawnArea (1)
@@ -446,21 +463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7f06d4909c9a447b08d9c73a80f3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveDirection: {x: 1, y: 0, z: 0}
---- !u!114 &1496540114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496540111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cac17b158edb95b44b12da99b0e207aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: -4518163407334209957, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-  _spawnPoint: {fileID: 1496540113}
 --- !u!1 &1698227808
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +472,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1698227809}
-  - component: {fileID: 1698227810}
   - component: {fileID: 1698227811}
   m_Layer: 0
   m_Name: SpawnArea
@@ -494,20 +495,6 @@ Transform:
   m_Father: {fileID: 714681303}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1698227810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1698227808}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cac17b158edb95b44b12da99b0e207aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: -4518163407334209957, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-  _spawnPoint: {fileID: 1698227811}
 --- !u!114 &1698227811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,4 +507,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7f06d4909c9a447b08d9c73a80f3f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveDirection: {x: 0, y: 0, z: 2}
